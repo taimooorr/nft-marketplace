@@ -10,6 +10,17 @@ import { useFonts } from 'expo-font';
 import Home from './Screens/Home';
 import Details from './Screens/Details';
 export default function App() {
+  const  [loaded]  =  useFonts({
+    InterBold: require('./assets/fonts/Inter-Bold.ttf'),
+    InterSemiBold: require('./assets/fonts/Inter-SemiBold.ttf'),
+    InterRegular: require('./assets/fonts/Inter-Regular.ttf'),
+    InterMedium: require('./assets/fonts/Inter-Medium.ttf'),
+    InterLight: require('./assets/fonts/Inter-Light.ttf'),
+  });
+  if (!loaded) {
+    return null;
+  }
+  // Load fonts
   const Stack = createStackNavigator();
   const theme = {
     ...DefaultTheme,
